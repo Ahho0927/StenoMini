@@ -1,6 +1,6 @@
 from pynput.keyboard import Key, Controller
 from keyboard import unhook_all
-from keybd.keys import KEY_BLOCKED, KEY_USED, KEY_ARROW, key_wrote
+from keybd.keys import KEY_BLOCKED, KEY_USED, KEY_MOVE, key_wrote
 from keybd.translate import Translate
 from keybd.key_control import KeyControl
 translate = Translate()
@@ -10,7 +10,7 @@ class Stroke:
     def __init__(self) -> None:
         self.key_monitor = set()
         self.key_in_stroke = set()
-        self.arrow_key_wrote = {key: 0 for key in KEY_ARROW}
+        self.arrow_key_wrote = {key: 0 for key in KEY_MOVE}
 
     def on_press(self, key) -> None:
         """This get physically pressed keys sent from Listener() in main.py.
@@ -45,7 +45,7 @@ class Stroke:
                 Controller().press(Key.backspace)
                 Controller().release(Key.backspace)
                 Controller().release(Key.ctrl_l)
-            elif key in KEY_ARROW:
+            elif key in KEY_MOVE:
                 if self.arrow_key_wrote[key] == 0:
                     self.arrow_key_wrote[key] += 1
                     unhook_all()

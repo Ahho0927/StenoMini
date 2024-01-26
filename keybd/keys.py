@@ -5,7 +5,7 @@ KEY_LOWER: str = '`1234567890-=qwertyuiop[]\\asdfghjkl;\'zxcvbnm,./'
 KEY_UPPER: str = '~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?'
 KEY_ALL: str = KEY_LOWER + KEY_UPPER
 
-KEY_ARROW: list[Key] = [Key.up, Key.down, Key.left, Key.right]
+KEY_MOVE: list[Key] = [Key.up, Key.down, Key.left, Key.right, Key.home, Key.end]
 
 KEY_USED: list[str, Key] = ['1', '2', '3', '4', '5',      '8', '9', '0', '-', '=',
                             'q', 'w', 'e', 'r', 't',      'u', 'i', 'o', 'p', '[', 
