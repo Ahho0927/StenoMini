@@ -57,7 +57,10 @@ class Translate:
                           + result[1:])
 
             except Exception:
-                result = self._compose_hangul(cho, jung, jong)
+                try:
+                    result = self._compose_hangul(cho, jung, jong)
+                except Exception:
+                    pass
             
         self.previous_result += result
         if len(self.previous_result) > 10:
