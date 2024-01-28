@@ -9,7 +9,7 @@ KEY_MOVE: list[Key] = [Key.up, Key.down, Key.left, Key.right, Key.home, Key.end]
 
 KEY_USED: list[str, Key] = ['1', '2', '3', '4', '5',      '8', '9', '0', '-', '=',
                             'q', 'w', 'e', 'r', 't',      'u', 'i', 'o', 'p', '[', 
-                                      'd', 'f',                'k', 'l', ';',
+                                 's', 'd', 'f',                'k', 'l', ';',
                                               'v', 'b', 'n', 'm',
                                                   Key.space]
 
@@ -21,7 +21,7 @@ KEY_BLOCKED: list[str] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-',
 
 KEY_TRANSLATION: dict[str, Key] = {'1': '1', '2': '2', '3': '3', '4': '4', '5': '5',           '8': '6', '9': '7', '0': '8', '-': '9', '=': '0', 
                                  'q': 'ㅂ', 'w': 'ㅈ', 'e': 'ㄷ', 'r': 'ㄱ', 't': 'ㅅ',       'u': 'ㅅ', 'i': 'ㄱ', 'o': 'ㄷ', 'p': 'ㅈ', '[': 'ㅂ', 
-                                                       'd': 'ㅇ', 'f': 'ㅎ',                            'k': 'ㅎ', 'l': 'ㅆ', ';': 'ㄲ', 
+                                            's': '*', 'd': 'ㅇ', 'f': 'ㅎ',                            'k': 'ㅎ', 'l': 'ㄲ', ';': 'ㅆ', 
                                                                     'v': 'ㅡ', 'b': 'ㅗ', 'n': 'ㅓ', 'm': 'ㅏ',  
                                                                                 Key.space: 'ㅣ'}
 
@@ -30,12 +30,12 @@ KEY_CHO: list[str] = ['q', 'w', 'e', 'r', 't',
 KEY_JUNG: list[str] = ['v', 'b', 'n', 'm', Key.space]
 KEY_JONG: list[str] = ['u', 'i', 'o', 'p', '[', 
                         'k', 'l', ';']
-KEY_SPECIAL: list[str] = ['1', '2', '3', '4', '5', '8', '9', '0', '-', '=']
+KEY_SPECIAL: list[str] = ['1', '2', '3', '4', '5', '8', '9', '0', '-', '=', 's']
 
 CHO: str = 'ㅂㅈㄷㄱㅅㅇㅎ'
 JUNG: str = 'ㅗㅡㅏㅓㅣ'
 JONG: str = 'ㅂㅈㄷㄱㅅㅎㅆㄲ'
-SPECIAL: str = '1234567890'
+SPECIAL: str = '1234567890*'
 
 CHO_TRANSLATION: dict[str] = {'ㄱ': 'ㄱ', 
                               'ㄱㅇ': 'ㄲ', 
