@@ -35,7 +35,7 @@ KEY_SPECIAL: list[str] = ['1', '2', '3', '4', '5', '8', '9', '0', '-', '=', 's']
 CHO: str = 'ㅂㅈㄷㄱㅅㅇㅎ'
 JUNG: str = 'ㅗㅡㅏㅓㅣ'
 JONG: str = 'ㅂㅈㄷㄱㅅㅎㅆㄲ'
-SPECIAL: str = '1234567890*'
+SPECIAL: str = '1234567890*?'
 
 CHO_TRANSLATION: dict[str] = {'ㄱ': 'ㄱ', 
                               'ㄱㅇ': 'ㄲ', 
