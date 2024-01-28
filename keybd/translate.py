@@ -25,7 +25,6 @@ class Translate:
                         key_control.send_backspace(l)
                         if l:
                             self.previous_result = self.previous_result[:-l]
-                        print(l)
                         break
             if result[0] == '-': # combine
                 result = result[1:]
@@ -41,7 +40,24 @@ class Translate:
                     result = result.split('/')[1]
 
         except KeyError:
-            result = self._compose_hangul(cho, jung, jong)
+            try:
+                result = MACRO_DATA['-' + jong]
+                if '-' not in result:
+                    raise Exception
+                if result[0] == '↙': # stick
+                    result = result[1:]
+                    for l, letter in enumerate(self.previous_result[::-1]):
+                        if letter != ' ':
+                            key_control.send_backspace(l)
+                            if l:
+                                self.previous_result = self.previous_result[:-l]
+                            break
+                result = result[1:]
+                result = (compose(cho, jung, result[0])
+                          + result[1:])
+
+            except Exception:
+                result = self._compose_hangul(cho, jung, jong)
             
         self.previous_result += result
         if len(self.previous_result) > 10:
