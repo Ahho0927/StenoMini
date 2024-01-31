@@ -1,3 +1,5 @@
+"""pynput and keyboard helps approach to keyboard or mouse easily.
+"""
 from pynput.keyboard import Key, Controller
 from keyboard import unhook_all
 from keybd.keys import KEY_BLOCKED, KEY_USED, KEY_MOVE, key_wrote
@@ -7,6 +9,8 @@ translate = Translate()
 key_control = KeyControl()
 
 class Stroke:
+    """Class about Key Stroke.
+    """
     def __init__(self) -> None:
         self.key_monitor = set()
         self.key_in_stroke = set()
@@ -66,7 +70,7 @@ class Stroke:
             key = key.char
         except AttributeError:
             pass
-        
+
         if key in KEY_USED:
             try:
                 self.key_monitor.remove(key)
